@@ -1,0 +1,2657 @@
+{
+  "version": "1.5",
+  "settings": {
+    "id": "e0a6ce23-4108-406a-b620-5b8141bad39d",
+    "defaultLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "description": "",
+    "userVariables": [],
+    "botVariables": [],
+    "configVariables": {}
+  },
+  "topics": [
+    {
+      "description": "Generic questions and answers (matches any topic)",
+      "id": "tpc-global",
+      "name": "Global"
+    }
+  ],
+  "flows": [
+    {
+      "topicId": "tpc-global",
+      "id": "wf-error",
+      "name": "Error",
+      "startNode": "nd-f0af432c79",
+      "variables": [],
+      "links": [
+        {
+          "id": "lnk-46f106d06d",
+          "source": "nd-f0af432c79",
+          "sourcePort": "trs-fcdd75591e",
+          "target": "nd-e7faca74cd"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "nd-f0af432c79",
+          "name": "Entry",
+          "type": "entry",
+          "deletable": false,
+          "variables": [],
+          "instructions": [
+            {
+              "id": "trs-fcdd75591e",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "nd-e7faca74cd"
+              }
+            }
+          ],
+          "x": 100,
+          "y": 100
+        },
+        {
+          "id": "nd-e7faca74cd",
+          "name": "Standard",
+          "type": "standard",
+          "deletable": true,
+          "instructions": [
+            {
+              "id": "ins-731f83c0a1",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "staticValue": "",
+                  "dynamicValue": "Sorry, an error occurred. Please try again later",
+                  "valueType": "dynamic"
+                }
+              }
+            }
+          ],
+          "x": 450,
+          "y": 100
+        },
+        {
+          "id": "nd-765e4da7cf",
+          "name": "End",
+          "type": "end",
+          "variables": [],
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-710aae5c8d",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "END"
+              }
+            }
+          ],
+          "x": 800,
+          "y": 100
+        }
+      ],
+      "parentFolder": "root"
+    },
+    {
+      "topicId": "tpc-global",
+      "id": "wf-timeout",
+      "name": "Timeout",
+      "startNode": "nd-e2e936306e",
+      "variables": [],
+      "links": [
+        {
+          "id": "lnk-ce914efa8e",
+          "source": "nd-e2e936306e",
+          "sourcePort": "trs-895f79eb05",
+          "target": "nd-f1a6edeb8b"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "nd-e2e936306e",
+          "name": "Entry",
+          "type": "entry",
+          "deletable": false,
+          "variables": [],
+          "instructions": [
+            {
+              "id": "trs-895f79eb05",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "nd-f1a6edeb8b"
+              }
+            }
+          ],
+          "x": 100,
+          "y": 100
+        },
+        {
+          "id": "nd-f1a6edeb8b",
+          "name": "Standard",
+          "type": "standard",
+          "deletable": true,
+          "instructions": [],
+          "x": 450,
+          "y": 100
+        },
+        {
+          "id": "nd-0b6bcd2dcb",
+          "name": "End",
+          "type": "end",
+          "variables": [],
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-cc8e3ba33f",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "END"
+              }
+            }
+          ],
+          "x": 800,
+          "y": 100
+        }
+      ],
+      "parentFolder": "root"
+    },
+    {
+      "topicId": "tpc-global",
+      "id": "wf-conversation-end",
+      "name": "Conversation End",
+      "startNode": "nd-980d309313",
+      "variables": [],
+      "links": [
+        {
+          "id": "lnk-962723d458",
+          "source": "nd-980d309313",
+          "sourcePort": "trs-86beef78c4",
+          "target": "nd-74dacf6fd5"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "nd-980d309313",
+          "name": "Entry",
+          "type": "entry",
+          "deletable": false,
+          "variables": [],
+          "instructions": [
+            {
+              "id": "trs-86beef78c4",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "nd-74dacf6fd5"
+              }
+            }
+          ],
+          "x": 100,
+          "y": 100
+        },
+        {
+          "id": "nd-74dacf6fd5",
+          "name": "Standard",
+          "type": "standard",
+          "deletable": true,
+          "instructions": [
+            {
+              "id": "ins-5ae00e04e4",
+              "type": "content",
+              "content": {
+                "type": "image",
+                "imageUrl": {
+                  "staticValue": "",
+                  "valueType": "static"
+                },
+                "title": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "see you",
+                  "staticValue": ""
+                }
+              },
+              "nodeId": "nd-74dacf6fd5"
+            }
+          ],
+          "x": 450,
+          "y": 100
+        },
+        {
+          "id": "nd-0c4d544162",
+          "name": "End",
+          "type": "end",
+          "variables": [],
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-5e1fdf2c84",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "END"
+              }
+            }
+          ],
+          "x": 800,
+          "y": 100
+        }
+      ],
+      "parentFolder": "root"
+    },
+    {
+      "topicId": "tpc-global",
+      "id": "wf-3c76acc6bb",
+      "name": "New workflow (1)",
+      "startNode": "nd-ddd08ddd54",
+      "variables": [],
+      "links": [],
+      "nodes": [
+        {
+          "id": "nd-ddd08ddd54",
+          "name": "Entry",
+          "type": "entry",
+          "deletable": false,
+          "variables": [],
+          "instructions": [
+            {
+              "id": "trs-53dce31bdf",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {}
+            }
+          ],
+          "x": 100,
+          "y": 100
+        },
+        {
+          "id": "nd-46218cf1d1",
+          "name": "Exit",
+          "type": "exit",
+          "variables": [],
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-084bfba5b3",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "#"
+              }
+            }
+          ],
+          "x": 800,
+          "y": 100
+        }
+      ],
+      "parentFolder": "root"
+    },
+    {
+      "topicId": "tpc-global",
+      "id": "wf-main",
+      "name": "Main",
+      "startNode": "nd-6815ca5136",
+      "variables": [
+        {
+          "id": "var-03e34832fa",
+          "name": "HelloVar1",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "name": "leadIndustry",
+          "description": "",
+          "id": "var-2382f3763e",
+          "defaultValue": ""
+        },
+        {
+          "id": "var-8f8e846dda",
+          "name": "nextMsg",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-2787509a8c",
+          "name": "LeadRole",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-ca1dac7f21",
+          "name": "LeadEmail",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-74a2c346ac",
+          "name": "LeadName",
+          "type": "object",
+          "description": "",
+          "typings": "{ first: string; last: string }"
+        },
+        {
+          "id": "var-286bef4aec",
+          "name": "LeadCompany",
+          "type": "object",
+          "description": "",
+          "typings": "{ country: string, city: string, street: string, zip: string, number: string }"
+        },
+        {
+          "id": "var-6d03daf466",
+          "name": "LeadPhone",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-3b529b895a",
+          "name": "questions",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-2cfd5696f5",
+          "name": "question",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-f4da6a4123",
+          "type": "string",
+          "name": "apiResponse",
+          "description": "",
+          "defaultValue": ""
+        },
+        {
+          "id": "var-37bc433c55",
+          "name": "questionAsk",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "id": "var-16651134fa",
+          "name": "write",
+          "type": "boolean",
+          "description": ""
+        }
+      ],
+      "links": [
+        {
+          "id": "edg-0f20ed35aa",
+          "source": "nd-6815ca5136",
+          "sourcePort": "trs-b242207c4d",
+          "target": "nd-04806ceba9"
+        },
+        {
+          "id": "edg-af8223894a",
+          "source": "nd-9de724c619",
+          "sourcePort": "ins-4357744229",
+          "target": "nd-72f49face4"
+        },
+        {
+          "id": "edg-8491ddafa3",
+          "source": "nd-72f49face4",
+          "sourcePort": "ins-f80e37e9d1",
+          "target": "nd-3626272e58"
+        },
+        {
+          "id": "edg-78dcb02e5d",
+          "source": "nd-3626272e58",
+          "sourcePort": "trs-c25396d59d",
+          "target": "nd-55a2bfe3ed"
+        },
+        {
+          "id": "edg-9873619ee4",
+          "source": "nd-3626272e58",
+          "sourcePort": "trs-1c87fa665a",
+          "target": "nd-ddbf65e26c"
+        },
+        {
+          "id": "edg-de125e3109",
+          "source": "nd-345effb9a8",
+          "sourcePort": "trs-506a6d19ca",
+          "target": "nd-ddbf65e26c"
+        },
+        {
+          "id": "edg-24fba42b7f",
+          "source": "nd-ddbf65e26c",
+          "sourcePort": "ins-1be0b6a355",
+          "target": "nd-345effb9a8"
+        },
+        {
+          "id": "edg-7051e46be5",
+          "source": "nd-345effb9a8",
+          "sourcePort": "trs-de08111463",
+          "target": "nd-b3ead72677"
+        },
+        {
+          "id": "edg-968c1584a8",
+          "source": "nd-b3ead72677",
+          "sourcePort": "trs-3f10a73e25",
+          "target": "nd-55a2bfe3ed"
+        },
+        {
+          "id": "edg-6fa3ef7c7f",
+          "source": "nd-04806ceba9",
+          "sourcePort": "trs-7dfb1d7ce0",
+          "target": "nd-55a2bfe3ed"
+        },
+        {
+          "id": "edg-cc2bc3f62b",
+          "source": "nd-eb96762a92",
+          "sourcePort": "ins-a11e26aa89",
+          "target": "nd-72f49face4"
+        },
+        {
+          "id": "edg-197a0133a4",
+          "source": "nd-04806ceba9",
+          "sourcePort": "trs-06d37517ca",
+          "target": "nd-ddbf65e26c"
+        },
+        {
+          "id": "edg-6b836dcdd6",
+          "source": "nd-345effb9a8",
+          "sourcePort": "trs-c9650097ad",
+          "target": "nd-55a2bfe3ed"
+        },
+        {
+          "id": "edg-9f69060a4e",
+          "source": "nd-04806ceba9",
+          "sourcePort": "trs-6d32058087",
+          "target": "nd-9de724c619"
+        },
+        {
+          "id": "edg-e28de72166",
+          "source": "nd-f781665729",
+          "sourcePort": "trs-eb4a42be94",
+          "target": "nd-55a2bfe3ed"
+        },
+        {
+          "id": "edg-e54df432f4",
+          "source": "nd-f781665729",
+          "sourcePort": "trs-42cf35148e",
+          "target": "nd-ddbf65e26c"
+        },
+        {
+          "id": "edg-9c2d5068e8",
+          "source": "nd-3626272e58",
+          "sourcePort": "trs-b1e04634dd",
+          "target": "nd-f781665729"
+        },
+        {
+          "id": "edg-c215b6f33a",
+          "source": "nd-b3ead72677",
+          "sourcePort": "trs-d4197aea7c",
+          "target": "nd-f781665729"
+        }
+      ],
+      "nodes": [
+        {
+          "instructions": [
+            {
+              "id": "ins-bf7caae039",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Absolutely, at AlphaNovo we understand that businesses have diverse needs, and that's why we offer a range of AI solutions beyond our AI chatbots.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-19707ab0f5",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Custom AI Automation & Product Development Solutions: We offer custom solutions that are specifically tailored to meet your unique business needs. Whether you're looking to automate complex workflows, streamline processes, or develop a product, our experts will work with you to design and implement a solution that drives your business forward.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-bf8c99e413",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "No-Code Website & SaaS Development Services: We understand that not every business has access to in-house coding expertise. That's why we offer no-code website and SaaS development services. Our team can help you develop a dynamic, responsive website or a scalable SaaS solution without the need for extensive coding.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-79389cd470",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "AI Consultancy: If you're not sure where to start with AI or how it can benefit your business, our AI consultancy services are for you. Our experts can provide strategic advice, guidance, and hands-on support to help you leverage AI technologies to their full potential.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-7522845f94",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "At AlphaNovo, we're committed to helping your business leverage AI technology to drive growth and efficiency. If you're interested in learning more about our offerings, feel free to reach out to us.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-a5ea532aaa",
+              "type": "content",
+              "content": {
+                "type": "carousel",
+                "items": [
+                  {
+                    "type": "card",
+                    "title": {
+                      "valueType": "dynamic",
+                      "dynamicValue": "Ideation",
+                      "staticValue": ""
+                    },
+                    "subtitle": {
+                      "staticValue": "",
+                      "valueType": "static"
+                    },
+                    "imageUrl": {
+                      "staticValue": "https://s3.us-east-1.amazonaws.com/cloud-studio-botsbca2d619-1916w6llinepa/e0a6ce23-4108-406a-b620-5b8141bad39d/media/31529b39-4a14-4e1f-b98d-16a7895c7bef.png",
+                      "valueType": "static"
+                    },
+                    "actions": {
+                      "valueType": "static",
+                      "staticValue": [],
+                      "isExpression": true
+                    }
+                  },
+                  {
+                    "type": "card",
+                    "title": {
+                      "valueType": "dynamic",
+                      "dynamicValue": "Research & Design",
+                      "staticValue": ""
+                    },
+                    "subtitle": {
+                      "staticValue": "",
+                      "valueType": "static"
+                    },
+                    "imageUrl": {
+                      "staticValue": "https://s3.us-east-1.amazonaws.com/cloud-studio-botsbca2d619-1916w6llinepa/e0a6ce23-4108-406a-b620-5b8141bad39d/media/b3e4df8c-7530-4c9b-9b08-fee6984c628b.png",
+                      "valueType": "static"
+                    },
+                    "actions": {
+                      "valueType": "static",
+                      "staticValue": [],
+                      "isExpression": true
+                    }
+                  },
+                  {
+                    "type": "card",
+                    "title": {
+                      "valueType": "dynamic",
+                      "dynamicValue": "Fast & Best Development",
+                      "staticValue": ""
+                    },
+                    "subtitle": {
+                      "staticValue": "",
+                      "valueType": "static"
+                    },
+                    "imageUrl": {
+                      "staticValue": "https://s3.us-east-1.amazonaws.com/cloud-studio-botsbca2d619-1916w6llinepa/e0a6ce23-4108-406a-b620-5b8141bad39d/media/43c19190-5cc6-464a-b37b-6fb1b5063baa.png",
+                      "valueType": "static"
+                    },
+                    "actions": {
+                      "valueType": "static",
+                      "staticValue": [],
+                      "isExpression": true
+                    }
+                  },
+                  {
+                    "type": "card",
+                    "title": {
+                      "valueType": "dynamic",
+                      "dynamicValue": "Maintain and Training",
+                      "staticValue": ""
+                    },
+                    "subtitle": {
+                      "staticValue": "",
+                      "valueType": "static"
+                    },
+                    "imageUrl": {
+                      "staticValue": "https://s3.us-east-1.amazonaws.com/cloud-studio-botsbca2d619-1916w6llinepa/e0a6ce23-4108-406a-b620-5b8141bad39d/media/02f55b87-37e3-406a-a2e7-6339b94d9ad6.png",
+                      "valueType": "static"
+                    },
+                    "actions": {
+                      "valueType": "static",
+                      "staticValue": [],
+                      "isExpression": true
+                    }
+                  }
+                ]
+              },
+              "nodeId": "nd-f781665729"
+            },
+            {
+              "id": "ins-7fc05b5e19",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-f781665729",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Would you like to get more information?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "I have a question.",
+                      "value": "I have a question.",
+                      "enabled": true
+                    },
+                    {
+                      "label": "Let's schedule a demo!",
+                      "value": "Let's schedule a demo!",
+                      "enabled": true
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [
+                {
+                  "id": "trs-42cf35148e",
+                  "type": "transition",
+                  "label": "I have a question.",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=I have a question."
+                  },
+                  "destination": {
+                    "node": "nd-ddbf65e26c"
+                  }
+                },
+                {
+                  "id": "trs-eb4a42be94",
+                  "type": "transition",
+                  "label": "Let's schedule a demo!",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=Let's schedule a demo!"
+                  },
+                  "destination": {
+                    "node": "nd-55a2bfe3ed"
+                  }
+                }
+              ],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            }
+          ],
+          "type": "standard",
+          "id": "nd-f781665729",
+          "name": "AnyOtherSOlution",
+          "deletable": true,
+          "x": 1575,
+          "y": -570
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-32de483821",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Let me explain quickly!\n\nAn AI chatbot is an investment that helps protect your profits in several ways. By providing instant, 24/7 customer support, it enhances customer satisfaction and loyalty, reducing churn rates.\n\nIt also automates routine tasks, freeing your team to focus on strategic initiatives that drive growth.\n\nIn addition, a chatbot can handle an infinite number of inquiries simultaneously, eliminating the need for extra staff during peak times and thus reducing operational costs.\"",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-9de724c619"
+            },
+            {
+              "id": "ins-35ec3b0006",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-9de724c619",
+              "variableId": "var-2382f3763e",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Can I ask your industry so I can help you better?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Mechanical Contractor",
+                      "value": "Mechanical Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Electrical Contractor",
+                      "value": "Electrical Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Plumbing Contractor",
+                      "value": "Plumbing Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Energy & Solar Contractor",
+                      "value": "Energy & Solar Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "HVAC Contractor",
+                      "value": "HVAC Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Specialty Contractor",
+                      "value": "Specialty Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Landscape & Maintenance Contractor",
+                      "value": "Landscape & Maintenance Contractor",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Fire & Sprinkler Contractor",
+                      "value": "Fire & Sprinkler Contractor",
+                      "enabled": false
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            },
+            {
+              "id": "ins-a11e26aa89",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "nodeId": "nd-9de724c619",
+              "destination": {
+                "node": "nd-72f49face4"
+              },
+              "generative": {
+                "properties": {
+                  "condition": false
+                },
+                "suggestion": {
+                  "condition": "event.nlu.intents?.some(intent => intent.id === 'int-no')"
+                },
+                "label": ""
+              },
+              "label": ""
+            }
+          ],
+          "type": "standard",
+          "id": "nd-eb96762a92",
+          "name": "Standard3",
+          "deletable": true,
+          "x": 375,
+          "y": 240,
+          "enableKnowledgeAnswering": false
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-81207a8847",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-b3ead72677",
+              "question": {
+                "staticValue": "",
+                "dynamicValue": "Would you like to schedule a demo?",
+                "valueType": "dynamic"
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Yes, please!",
+                      "value": "Yes, please!",
+                      "enabled": true
+                    },
+                    {
+                      "label": "I want to see the solutions.",
+                      "value": "I want to see the solutions.",
+                      "enabled": true
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [
+                {
+                  "id": "trs-3f10a73e25",
+                  "type": "transition",
+                  "label": "Yes, please!",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=Yes, please!"
+                  },
+                  "destination": {
+                    "node": "nd-55a2bfe3ed"
+                  }
+                },
+                {
+                  "id": "trs-d4197aea7c",
+                  "type": "transition",
+                  "label": "I want to see the solutions.",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=I want to see the solutions."
+                  },
+                  "destination": {
+                    "node": "nd-f781665729"
+                  }
+                }
+              ],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            }
+          ],
+          "type": "standard",
+          "id": "nd-b3ead72677",
+          "name": "Standard1",
+          "deletable": true,
+          "x": 1740,
+          "y": 450
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-239cb9d29c",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-345effb9a8",
+              "question": {
+                "staticValue": "",
+                "dynamicValue": "Do you have another question?",
+                "valueType": "dynamic"
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Yes",
+                      "value": "Yes",
+                      "enabled": true
+                    },
+                    {
+                      "label": "No",
+                      "value": "No",
+                      "enabled": true
+                    },
+                    {
+                      "label": "Request a Demo",
+                      "value": "Request a Demo",
+                      "enabled": true
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [
+                {
+                  "id": "trs-506a6d19ca",
+                  "type": "transition",
+                  "label": "Yes",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=Yes"
+                  },
+                  "destination": {
+                    "node": "nd-ddbf65e26c"
+                  }
+                },
+                {
+                  "id": "trs-de08111463",
+                  "type": "transition",
+                  "label": "No",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=No"
+                  },
+                  "destination": {
+                    "node": "nd-b3ead72677"
+                  }
+                },
+                {
+                  "id": "trs-c9650097ad",
+                  "type": "transition",
+                  "label": "Request a Demo",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=Request a Demo"
+                  },
+                  "destination": {
+                    "node": "nd-55a2bfe3ed"
+                  }
+                }
+              ],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            }
+          ],
+          "type": "standard",
+          "id": "nd-345effb9a8",
+          "name": "FurtherQs",
+          "deletable": true,
+          "x": 960,
+          "y": 405
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-7ecc96d2d3",
+              "type": "capture",
+              "entityId": "prompts://RawInput/v1",
+              "entityName": "Raw Input",
+              "nodeId": "nd-ddbf65e26c",
+              "variableId": "var-2cfd5696f5",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "What would you like to know?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "staticValue": [],
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"undefined\" */\ninterface Output = { value: any }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: undefined\nuser: undefined\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { value: any }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "KD0vQk3sI4VmD+MFmKH3o+S0WSRS8SWR7I9fwWe6Sqizv3EMuDNCty5nFxwNDZ+eVqPnU8KXDFyszXsw8cGpjZaW2ajGXjJWF2KWfLUIiJrTYwzeK5NIOeGqBCs0BxNs/OetoZk7v/ZX+UG4Swark6svVeOWHh9UHqPxE/8/wrD0z04WNOtGDCRC2XIpIxgCpG02nXzHHwzkKRRViZSQPdzWBmGHfH/bTQNE8+jmVEPD/6tRyz6sfat3BVpRfrCEyzeP0+OjiIdEpqWa6WekiLRVzLb4RRmi7LGEwbMaihxeQur4pPo5KkyQg6ucp170/r2xzsYG8BhoqT1ropom+g=="
+              }
+            },
+            {
+              "id": "ins-dac44c561a",
+              "type": "action",
+              "code": "const endpoint = \"https://www.stack-inference.com/run_deployed_flow?flow_id=64a05ec196824b1299192507&org=70063aba-f673-4df9-ab25-a2689e727e32\"\r\n\r\nconst headers = {\r\n    Authorization: 'Bearer a611da3c-6ac8-476f-9e11-806ca5c1cb7f',\r\n    \"Content-Type\": \"application/json\"\r\n};\r\n\r\nconst data = {\r\n    \"in-0\": workflow.question\r\n};\r\n\r\n    try {\r\n        const response = await axios.post(endpoint, data, { headers });\r\n        console.log(\"Response: \", response);  // Print out the whole response object to see if \"out-0\" exists\r\n\r\n        workflow.apiResponse = response.data[\"out-0\"];\r\n    } catch (error) {\r\n        throw new Error(`stack-error: ${error}`);\r\n    }\r\n",
+              "origin": "builtin",
+              "nodeId": "nd-ddbf65e26c",
+              "generative": {
+                "properties": {
+                  "code": false
+                },
+                "suggestion": {},
+                "label": ""
+              },
+              "data": {},
+              "transpiledCode": "const endpoint = \"https://www.stack-inference.com/run_deployed_flow?flow_id=64a05ec196824b1299192507&org=70063aba-f673-4df9-ab25-a2689e727e32\"\r\n\r\nconst headers = {\r\n    Authorization: 'Bearer a611da3c-6ac8-476f-9e11-806ca5c1cb7f',\r\n    \"Content-Type\": \"application/json\"\r\n};\r\n\r\nconst data = {\r\n    \"in-0\": workflow.question\r\n};\r\n\r\n    try {\r\n        const response = await axios.post(endpoint, data, { headers });\r\n        console.log(\"Response: \", response);  // Print out the whole response object to see if \"out-0\" exists\r\n\r\n        workflow.apiResponse = response.data[\"out-0\"];\r\n    } catch (error) {\r\n        throw new Error(`stack-error: ${error}`);\r\n    }\r\n"
+            },
+            {
+              "id": "ins-a2aea4c09b",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "@apiResponse",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-ddbf65e26c"
+            },
+            {
+              "id": "ins-1be0b6a355",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "nodeId": "nd-ddbf65e26c",
+              "destination": {
+                "node": "nd-345effb9a8"
+              },
+              "generative": {
+                "properties": {
+                  "condition": false
+                },
+                "suggestion": {}
+              }
+            }
+          ],
+          "type": "standard",
+          "id": "nd-ddbf65e26c",
+          "name": "StackAIQuery",
+          "deletable": true,
+          "x": 1380,
+          "y": 825,
+          "enableKnowledgeAnswering": false
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-b51ef761da",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Great, I just need a couple of information to set up your personalized demo.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-55a2bfe3ed"
+            },
+            {
+              "id": "ins-148d83aff5",
+              "type": "capture",
+              "entityId": "prompts://Email/v1",
+              "entityName": "Email Address",
+              "nodeId": "nd-55a2bfe3ed",
+              "variableId": "var-ca1dac7f21",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Please write your email address?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "staticValue": [],
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"At which email can we send you updates?\" */\ninterface Output = { email: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: At which email can we send you updates?\nuser: send it to ploik.rebekka at century-link.uk\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"email\":\"ploik.rebekka@century-link.uk\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { email: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "rjyLkOGGD5pJ7dCyebeqci0lVPtq4gxBCKA4rtJDWpT0FSQ0Lgb2lgi5IINZPKl1/HnPxOWQ0PeB3eYQC7g2VTBH8KypEgjLgodNWfT+Z8G41Uqu7et29Yx18/TCLrrSQjt/amRQbnORN+FX+TzbDRpw/7t7qIeXkp+wtVSHyWZ34rPBPmbbIwuTGahauebsUlHTtTE2lz8BBg43mYHELBSv4bWjVRiNnKLxLWeWFfRmQJ2A37z+R6g/8WK233hgybK0eAQRZuRTnM2Ul1sAbTp6e0RNzBWVEOGrc4bi/kBsYvNNwnj6Q7D5Y0w3SF5gq06BsPpWj5ap3TRaGF63rQ=="
+              }
+            },
+            {
+              "id": "ins-09c37c9369",
+              "type": "capture",
+              "entityId": "prompts://PersonName/v1",
+              "entityName": "Person Name",
+              "nodeId": "nd-55a2bfe3ed",
+              "variableId": "var-74a2c346ac",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "What is your name?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "staticValue": [],
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Who did you want to send the email to?\" */\ninterface Output = { first: string; last: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Who did you want to send the email to?\nuser: My name is Jerry Bean, but please send it to John Doe\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"first\":\"John\",\"last\":\"Doe\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { first: string; last: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "KBMS/llToqTAR2Ly0DcOMSKHVs8v6/Z+72HXj5ThF8nuLMr2qRJc3R0kQi3ic02ZAfELqRck2l6MfV+37r5wCikOfJGR0D+xbt0ZEO5JZmR1gBTd2OUAvly5X3QVSAs/rWb80MHB8RA1789ylPQXoJ/svx/yJiI7H4vZ0PqhvLqWlBzfhCpgXtYuEDpL1/hv8qAZXlFVFfxWo6gISmhg3lQwzyv2AbN+D6cQUh6JFlg2zyojA03N7I50qVUwBBS34PUkl+3+XCeBSDulSebHjEkIlb7hkTdEdJY2jfTSEcfcOwxYhc5h6jJX0ulQI5FsOB8FhEeSERO9UOp971vEHQ=="
+              }
+            },
+            {
+              "id": "ins-69dedc6fe0",
+              "type": "capture",
+              "entityId": "prompts://PersonName/v1",
+              "entityName": "Person Name",
+              "nodeId": "nd-55a2bfe3ed",
+              "variableId": "var-286bef4aec",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Can you tell me your company name?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "staticValue": [],
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Who did you want to send the email to?\" */\ninterface Output = { first: string; last: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Who did you want to send the email to?\nuser: My name is Jerry Bean, but please send it to John Doe\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"first\":\"John\",\"last\":\"Doe\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { first: string; last: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "KBMS/llToqTAR2Ly0DcOMSKHVs8v6/Z+72HXj5ThF8nuLMr2qRJc3R0kQi3ic02ZAfELqRck2l6MfV+37r5wCikOfJGR0D+xbt0ZEO5JZmR1gBTd2OUAvly5X3QVSAs/rWb80MHB8RA1789ylPQXoJ/svx/yJiI7H4vZ0PqhvLqWlBzfhCpgXtYuEDpL1/hv8qAZXlFVFfxWo6gISmhg3lQwzyv2AbN+D6cQUh6JFlg2zyojA03N7I50qVUwBBS34PUkl+3+XCeBSDulSebHjEkIlb7hkTdEdJY2jfTSEcfcOwxYhc5h6jJX0ulQI5FsOB8FhEeSERO9UOp971vEHQ=="
+              }
+            },
+            {
+              "id": "ins-00dd566668",
+              "type": "capture",
+              "entityId": "prompts://PhoneNumber/v1",
+              "entityName": "Phone Number",
+              "nodeId": "nd-55a2bfe3ed",
+              "variableId": "var-6d03daf466",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Lastly, what company website URL?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "staticValue": [],
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"What is your phone number and where are you?\" */\ninterface Output = { countryCode: string; number: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: What is your phone number and where are you?\nuser: Hello, i'm in canada, my cell is (476) 882-1042\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"number\":\"4768821042\",\"countryCode\":\"+1\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { countryCode: string; number: string }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "OU+pt4cZLc49CvUxzYUjJR/bJgiNFy7WzAZsRtuVk5dCxdN2MRVdYs9/Ahhu/2uzoRxen55dxmPBsxql0vzdR4IC4ghjNxOcTQ9g0HAVn6P7XBSgy3HXICpeZg3Z/CqPbdQE7Bjjvlh5K4cNIf3mbNPeNr4IRLmorYIFTwFjszF3umQFpdQfSWEWNBMsZNZnkH2kO/JVomEqwuhB2p8z/qKdWIldKwLbmpDVvmqVinilDozM87UntjYdmizi7T7TtT2UTixW+uuyQy1OJJRi5Gd/3gY9O5kloWMb9VH/OlokXLqjU2FjRi/AH7SCQZN/YEv7c14GnAbnmffnpHa8sw=="
+              }
+            },
+            {
+              "id": "ins-b745839ead",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "All set! Our experts will reach out to you shortly. Have a great day! I am here to assist you anytime.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-55a2bfe3ed"
+            },
+            {
+              "id": "ins-06d69a0647",
+              "type": "content",
+              "content": {
+                "type": "card",
+                "title": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Meet with the founder.",
+                  "staticValue": ""
+                },
+                "actions": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Twitter",
+                      "value": "https://twitter.com/youraimarketer",
+                      "action": "url"
+                    },
+                    {
+                      "label": "Linkedin",
+                      "value": "https://ca.linkedin.com/in/muratcan-koylan",
+                      "action": "url"
+                    }
+                  ],
+                  "isExpression": true
+                }
+              },
+              "nodeId": "nd-55a2bfe3ed"
+            }
+          ],
+          "type": "standard",
+          "id": "nd-55a2bfe3ed",
+          "name": "ScheduleADemo",
+          "deletable": true,
+          "x": 2100,
+          "y": 45
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-4a9a64f906",
+              "type": "action",
+              "code": "// Initialize nextMsg to an empty string if it's undefined\r\nworkflow.nextMsg = workflow.nextMsg || '';\r\n\r\n// Constants for roles and industries\r\nconst roles = {\r\n    owner: 'Owner',\r\n    manager: 'Manager',\r\n    developer: 'Developer',\r\n    marketer: 'Marketer',\r\n    customerService: 'Customer Service',\r\n    IT: 'IT'\r\n};\r\n\r\nconst industries = {\r\n    retailEcommerce: 'Retail & Ecommerce',\r\n    education: 'Education',\r\n    hospitality: 'Hospitality',\r\n    healthcare: 'Healthcare',\r\n    restaurantFood: 'Restaurant & Food',\r\n    serviceBusinesses: 'Service Businesses',\r\n    realEstate: 'Real Estate',\r\n    other: 'Other'\r\n};\r\n\r\n// Nested switch based on the user's industry and role\r\nswitch (workflow.leadIndustry) {\r\n    case industries.retailEcommerce:\r\n    case industries.education:\r\n    case industries.hospitality:\r\n    case industries.healthcare:\r\n    case industries.restaurantFood:\r\n    case industries.serviceBusinesses:\r\n    case industries.realEstate:\r\n    case industries.other:\r\n        switch (workflow.LeadRole) {\r\n            case roles.owner:\r\n                workflow.nextMsg = \"\\nAs an owner in the \" + workflow.leadIndustry + \" sector, you're constantly faced with new challenges. From improving operational efficiency to driving customer satisfaction, the list never ends. AlphaNovo's AI solutions can help by automating routine tasks, providing deep insights into customer behavior, and assisting in making data-driven decisions, so you can focus more on strategic growth.\";\r\n                break;\r\n            case roles.manager:\r\n                workflow.nextMsg = \"\\nAs a manager in the \" + workflow.leadIndustry + \" sector, you understand how critical it is to have real-time insights for decision making. AlphaNovo's AI solutions offer advanced analytics and prediction capabilities to help you anticipate market trends, streamline operations, and lead your team more effectively.\";\r\n                break;\r\n            case roles.developer:\r\n                workflow.nextMsg = \"\\nAs a developer in the \" + workflow.leadIndustry + \" sector, AlphaNovo's AI solutions could be your best ally. They can simplify the development process with tools for code optimization and error detection, freeing up your time to work on creating more innovative solutions.\";\r\n                break;\r\n            case roles.marketer:\r\n                workflow.nextMsg = \"\\nAs a marketer in the \" + workflow.leadIndustry + \", you're always seeking ways to better engage your audience. AlphaNovo's AI solutions offer intelligent customer segmentation, personalized recommendations, and automated marketing campaigns to maximize engagement and conversion rates.\";\r\n                break;\r\n            case roles.customerService:\r\n                workflow.nextMsg = \"\\nAs a customer service representative in the \" + workflow.leadIndustry + \", responding to customer queries promptly and effectively is crucial. AlphaNovo's AI chatbots can help manage incoming inquiries, freeing up your time to handle more complex issues and thus, improving overall customer satisfaction.\";\r\n                break;\r\n            case roles.IT:\r\n                workflow.nextMsg = \"\\nAs an IT professional in the \" + workflow.leadIndustry + \", you're tasked with maintaining system stability while also driving innovation. AlphaNovo's AI solutions offer robust infrastructure monitoring tools and predictive analytics to detect and prevent system issues, allowing you to focus more on strategic IT initiatives.\";\r\n                break;\r\n            default:\r\n                workflow.nextMsg += \"\\nEach business has a unique story and specific needs. We pride ourselves on our ability to understand and address these needs with effective and efficient AI solutions. Our innovative chatbot designs have helped businesses across sectors to automate their processes, improve customer experience, and drive growth.\";\r\n        }\r\n        break;\r\n    default:\r\n        workflow.nextMsg += \"\\nI'm sorry, I don't recognize your industry. Could you please specify your industry again?\";\r\n}\r\n``\r\n",
+              "origin": "builtin",
+              "nodeId": "nd-3626272e58",
+              "generative": {
+                "properties": {
+                  "code": false
+                },
+                "suggestion": {}
+              },
+              "data": {},
+              "transpiledCode": "workflow.nextMsg = workflow.nextMsg || \"\";\nconst roles = {\n  owner: \"Owner\",\n  manager: \"Manager\",\n  developer: \"Developer\",\n  marketer: \"Marketer\",\n  customerService: \"Customer Service\",\n  IT: \"IT\"\n};\nconst industries = {\n  retailEcommerce: \"Retail & Ecommerce\",\n  education: \"Education\",\n  hospitality: \"Hospitality\",\n  healthcare: \"Healthcare\",\n  restaurantFood: \"Restaurant & Food\",\n  serviceBusinesses: \"Service Businesses\",\n  realEstate: \"Real Estate\",\n  other: \"Other\"\n};\nswitch (workflow.leadIndustry) {\n  case industries.retailEcommerce:\n  case industries.education:\n  case industries.hospitality:\n  case industries.healthcare:\n  case industries.restaurantFood:\n  case industries.serviceBusinesses:\n  case industries.realEstate:\n  case industries.other:\n    switch (workflow.LeadRole) {\n      case roles.owner:\n        workflow.nextMsg = \"\\nAs an owner in the \" + workflow.leadIndustry + \" sector, you're constantly faced with new challenges. From improving operational efficiency to driving customer satisfaction, the list never ends. AlphaNovo's AI solutions can help by automating routine tasks, providing deep insights into customer behavior, and assisting in making data-driven decisions, so you can focus more on strategic growth.\";\n        break;\n      case roles.manager:\n        workflow.nextMsg = \"\\nAs a manager in the \" + workflow.leadIndustry + \" sector, you understand how critical it is to have real-time insights for decision making. AlphaNovo's AI solutions offer advanced analytics and prediction capabilities to help you anticipate market trends, streamline operations, and lead your team more effectively.\";\n        break;\n      case roles.developer:\n        workflow.nextMsg = \"\\nAs a developer in the \" + workflow.leadIndustry + \" sector, AlphaNovo's AI solutions could be your best ally. They can simplify the development process with tools for code optimization and error detection, freeing up your time to work on creating more innovative solutions.\";\n        break;\n      case roles.marketer:\n        workflow.nextMsg = \"\\nAs a marketer in the \" + workflow.leadIndustry + \", you're always seeking ways to better engage your audience. AlphaNovo's AI solutions offer intelligent customer segmentation, personalized recommendations, and automated marketing campaigns to maximize engagement and conversion rates.\";\n        break;\n      case roles.customerService:\n        workflow.nextMsg = \"\\nAs a customer service representative in the \" + workflow.leadIndustry + \", responding to customer queries promptly and effectively is crucial. AlphaNovo's AI chatbots can help manage incoming inquiries, freeing up your time to handle more complex issues and thus, improving overall customer satisfaction.\";\n        break;\n      case roles.IT:\n        workflow.nextMsg = \"\\nAs an IT professional in the \" + workflow.leadIndustry + \", you're tasked with maintaining system stability while also driving innovation. AlphaNovo's AI solutions offer robust infrastructure monitoring tools and predictive analytics to detect and prevent system issues, allowing you to focus more on strategic IT initiatives.\";\n        break;\n      default:\n        workflow.nextMsg += \"\\nEach business has a unique story and specific needs. We pride ourselves on our ability to understand and address these needs with effective and efficient AI solutions. Our innovative chatbot designs have helped businesses across sectors to automate their processes, improve customer experience, and drive growth.\";\n    }\n    break;\n  default:\n    workflow.nextMsg += \"\\nI'm sorry, I don't recognize your industry. Could you please specify your industry again?\";\n}\n``;\n"
+            },
+            {
+              "id": "ins-57c57ad7f6",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "@nextMsg ",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-3626272e58"
+            },
+            {
+              "id": "ins-162f7f5610",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-3626272e58",
+              "question": {
+                "valueType": "dynamic",
+                "dynamicValue": "Would you like to get more information?",
+                "staticValue": ""
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "I have a question.",
+                      "value": "I have a question.",
+                      "enabled": true
+                    },
+                    {
+                      "label": "What are the solutions of AlphaNovo?",
+                      "value": "What are the solutions of AlphaNovo?",
+                      "enabled": true
+                    },
+                    {
+                      "label": "Let's schedule a demo!",
+                      "value": "Let's schedule a demo!",
+                      "enabled": true
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [
+                {
+                  "id": "trs-1c87fa665a",
+                  "type": "transition",
+                  "label": "I have a question.",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=I have a question."
+                  },
+                  "destination": {
+                    "node": "nd-ddbf65e26c"
+                  }
+                },
+                {
+                  "id": "trs-b1e04634dd",
+                  "type": "transition",
+                  "label": "What are the solutions of AlphaNovo?",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=What are the solutions of AlphaNovo?"
+                  },
+                  "destination": {
+                    "node": "nd-f781665729"
+                  }
+                },
+                {
+                  "id": "trs-c25396d59d",
+                  "type": "transition",
+                  "label": "Let's schedule a demo!",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=Let's schedule a demo!"
+                  },
+                  "destination": {
+                    "node": "nd-55a2bfe3ed"
+                  }
+                }
+              ],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              },
+              "variableId": "__none__"
+            }
+          ],
+          "type": "standard",
+          "id": "nd-3626272e58",
+          "name": "RoleQue",
+          "deletable": true,
+          "x": 1305,
+          "y": 105
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-c0d8d10e14",
+              "type": "action",
+              "code": "// Initialize nextMsg to an empty string\nworkflow.nextMsg = workflow.nextMsg || '';\n\n// Check the IndustryAsk variable and create a new message in the workflow with the given text\nswitch (workflow.leadIndustry) {\n    case 'Retail & Ecommerce':\n        workflow.nextMsg += \"\\nFor the Retail & Ecommerce sector, our AI solutions can automate customer support, personalize shopping experiences, offer campaigns and streamline operations to boost sales and customer satisfaction.\";\n        break;\n    case 'Education':\n        workflow.nextMsg += \"\\nIn the Education sector, AI chatbots can provide instant responses to academic/knowledge base queries, send reminders for assignment deadlines and assist with course registration, helping to improve student engagement and administrative efficiency.\";\n        break;\n    case 'Hospitality':\n        workflow.nextMsg += \"\\nFor Hospitality businesses, our AI solutions can enhance guest relations by providing instant responses to queries, managing reservations and offering personalized recommendations for an improved guest experience.\";\n        break;\n    case 'Healthcare':\n        workflow.nextMsg += \"\\nIn Healthcare, AI chatbots can offer quick responses to health-related queries, schedule appointments and connect patients to healthcare professionals, enhancing patient care.\";\n        break;\n    case 'Restaurant & Food':\n        workflow.nextMsg += \"\\nFor the Restaurant & Food industry, our AI solutions can streamline reservations, answer queries and provide personalized recommendations to enhance customer satisfaction and operational efficiency.\";\n        break;\n    case 'Service Businesses':\n        workflow.nextMsg += \"\\nService Businesses can leverage our AI chatbots to manage customer inquiries and appointments, leading to improved service quality and operational efficiency.\";\n        break;\n    case 'Real Estate':\n        workflow.nextMsg += \"\\nIn Real Estate, our AI chatbots can automate property inquiries, schedule viewings, and provide personalized recommendations, enhancing client experience and operational efficiency.\";\n        break;\n    case 'Other':\n        workflow.nextMsg += \"\\nFor all other industries, AlphaNovo offers custom AI solutions tailored to your unique needs, challenges, and objectives. Whether you need to streamline operations, improve customer service, or drive innovation, we're here to help.\";\n        break;\n}\n\n// Declare role constants\nconst owner = 'Owner';\nconst manager = 'Manager';\nconst developer = 'Developer';\nconst marketer = 'Marketer';\nconst customerService = 'Customer Service';\nconst IT = 'IT';\n\n// Switch based on the user's role\nswitch (workflow.userRole) {\n    case owner:\n        // Handle the 'Owner' role\n        workflow.nextMsg += \"\\nAs an owner, you'll appreciate how AlphaNovo's AI solutions can automate processes, boost productivity, and increase profitability.\";\n        break;\n    case manager:\n        // Handle the 'Manager' role\n        workflow.nextMsg += \"\\nAs a manager, our AI solutions' ability to streamline operations and provide real-time insights will be invaluable in decision-making.\";\n        break;\n    case developer:\n        // Handle the 'Developer' role\n        workflow.nextMsg += \"\\nAs a developer, you'll find our robust and scalable AI solutions and seamless integrations essential for improving your productivity.\";\n        break;\n    case marketer:\n        // Handle the 'Marketer' role\n        workflow.nextMsg += \"\\nAs a marketer, our AI solutions' ability to automate and personalize customer engagement will be crucial for your marketing strategies.\";\n        break;\n    case customerService:\n        // Handle the 'Customer Service' role\n        workflow.nextMsg += \"\\nCustomer service representatives will find our AI chatbots invaluable for managing customer inquiries and improving service quality.\";\n        break;\n    case IT:\n        // Handle the 'IT' role\n        workflow.nextMsg += \"\\nIT professionals will appreciate AlphaNovo's AI solutions for their advanced features, reliability, and operational efficiency.\";\n        break;\n}\n",
+              "origin": "builtin",
+              "nodeId": "nd-72f49face4",
+              "generative": {
+                "properties": {
+                  "code": false
+                },
+                "suggestion": {
+                  "code": "const options = workflow.IndustryAsk.split(',') // Split the options by comma\nfor (const option of options) {\n  // Do something with each option\n  console.log(option)\n}"
+                },
+                "label": "if workflow IndustryAsk for each options"
+              },
+              "data": {},
+              "transpiledCode": "workflow.nextMsg = workflow.nextMsg || \"\";\nswitch (workflow.leadIndustry) {\n  case \"Retail & Ecommerce\":\n    workflow.nextMsg += \"\\nFor the Retail & Ecommerce sector, our AI solutions can automate customer support, personalize shopping experiences, offer campaigns and streamline operations to boost sales and customer satisfaction.\";\n    break;\n  case \"Education\":\n    workflow.nextMsg += \"\\nIn the Education sector, AI chatbots can provide instant responses to academic/knowledge base queries, send reminders for assignment deadlines and assist with course registration, helping to improve student engagement and administrative efficiency.\";\n    break;\n  case \"Hospitality\":\n    workflow.nextMsg += \"\\nFor Hospitality businesses, our AI solutions can enhance guest relations by providing instant responses to queries, managing reservations and offering personalized recommendations for an improved guest experience.\";\n    break;\n  case \"Healthcare\":\n    workflow.nextMsg += \"\\nIn Healthcare, AI chatbots can offer quick responses to health-related queries, schedule appointments and connect patients to healthcare professionals, enhancing patient care.\";\n    break;\n  case \"Restaurant & Food\":\n    workflow.nextMsg += \"\\nFor the Restaurant & Food industry, our AI solutions can streamline reservations, answer queries and provide personalized recommendations to enhance customer satisfaction and operational efficiency.\";\n    break;\n  case \"Service Businesses\":\n    workflow.nextMsg += \"\\nService Businesses can leverage our AI chatbots to manage customer inquiries and appointments, leading to improved service quality and operational efficiency.\";\n    break;\n  case \"Real Estate\":\n    workflow.nextMsg += \"\\nIn Real Estate, our AI chatbots can automate property inquiries, schedule viewings, and provide personalized recommendations, enhancing client experience and operational efficiency.\";\n    break;\n  case \"Other\":\n    workflow.nextMsg += \"\\nFor all other industries, AlphaNovo offers custom AI solutions tailored to your unique needs, challenges, and objectives. Whether you need to streamline operations, improve customer service, or drive innovation, we're here to help.\";\n    break;\n}\nconst owner = \"Owner\";\nconst manager = \"Manager\";\nconst developer = \"Developer\";\nconst marketer = \"Marketer\";\nconst customerService = \"Customer Service\";\nconst IT = \"IT\";\nswitch (workflow.userRole) {\n  case owner:\n    workflow.nextMsg += \"\\nAs an owner, you'll appreciate how AlphaNovo's AI solutions can automate processes, boost productivity, and increase profitability.\";\n    break;\n  case manager:\n    workflow.nextMsg += \"\\nAs a manager, our AI solutions' ability to streamline operations and provide real-time insights will be invaluable in decision-making.\";\n    break;\n  case developer:\n    workflow.nextMsg += \"\\nAs a developer, you'll find our robust and scalable AI solutions and seamless integrations essential for improving your productivity.\";\n    break;\n  case marketer:\n    workflow.nextMsg += \"\\nAs a marketer, our AI solutions' ability to automate and personalize customer engagement will be crucial for your marketing strategies.\";\n    break;\n  case customerService:\n    workflow.nextMsg += \"\\nCustomer service representatives will find our AI chatbots invaluable for managing customer inquiries and improving service quality.\";\n    break;\n  case IT:\n    workflow.nextMsg += \"\\nIT professionals will appreciate AlphaNovo's AI solutions for their advanced features, reliability, and operational efficiency.\";\n    break;\n}\n"
+            },
+            {
+              "id": "ins-0f049166e1",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "@nextMsg",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-72f49face4"
+            },
+            {
+              "id": "ins-9e2c20fa9f",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-72f49face4",
+              "variableId": "var-2787509a8c",
+              "question": {
+                "staticValue": "",
+                "dynamicValue": "What's your role?",
+                "valueType": "dynamic"
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Owner",
+                      "value": "Owner",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Manager",
+                      "value": "Manager",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Developer",
+                      "value": "Developer",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Marketer",
+                      "value": "Marketer",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Customer Service",
+                      "value": "Customer Service",
+                      "enabled": false
+                    },
+                    {
+                      "label": "IT",
+                      "value": "IT",
+                      "enabled": false
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            },
+            {
+              "id": "ins-f80e37e9d1",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "nodeId": "nd-72f49face4",
+              "destination": {
+                "node": "nd-3626272e58"
+              },
+              "generative": {
+                "properties": {
+                  "condition": false
+                },
+                "suggestion": {},
+                "label": ""
+              },
+              "label": ""
+            }
+          ],
+          "type": "standard",
+          "id": "nd-72f49face4",
+          "name": "IndustryQue",
+          "deletable": true,
+          "x": 765,
+          "y": -45,
+          "enableKnowledgeAnswering": true
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-8cbf9255d9",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Great question!",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-9de724c619"
+            },
+            {
+              "id": "ins-27a30a80ae",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "AlphaNovo is a forward-thinking AI solutions provider specializing in the development of custom AI chatbots and AI products.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-9de724c619"
+            },
+            {
+              "id": "ins-6be533d800",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "We focus on creating intelligent solutions that automate and enhance various business processes.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-9de724c619"
+            },
+            {
+              "id": "ins-72737a346e",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Our mission is to help businesses of all sizes harness the power of AI, driving innovation, efficiency, and growth.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-9de724c619"
+            },
+            {
+              "id": "ins-0a1495dc2f",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-9de724c619",
+              "variableId": "var-2382f3763e",
+              "question": {
+                "staticValue": "",
+                "dynamicValue": "Can I ask your industry so I can help you better?",
+                "valueType": "dynamic"
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "Retail & Ecommerce",
+                      "value": "Retail & Ecommerce",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Education",
+                      "value": "Education",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Hospitality",
+                      "value": "Hospitality",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Healthcare",
+                      "value": "Healthcare",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Restaurant & Food",
+                      "value": "Restaurant & Food",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Service Businesses",
+                      "value": "Service Businesses",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Real Estate",
+                      "value": "Real Estate",
+                      "enabled": false
+                    },
+                    {
+                      "label": "Other",
+                      "value": "Other",
+                      "enabled": false
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            },
+            {
+              "id": "ins-4357744229",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "nodeId": "nd-9de724c619",
+              "destination": {
+                "node": "nd-72f49face4"
+              },
+              "generative": {
+                "properties": {
+                  "condition": false
+                },
+                "suggestion": {
+                  "condition": "event.nlu.intents?.some(intent => intent.id === 'int-no')"
+                },
+                "label": ""
+              },
+              "label": ""
+            }
+          ],
+          "type": "standard",
+          "id": "nd-9de724c619",
+          "name": "WhatIsJonas",
+          "deletable": true,
+          "x": 300,
+          "y": -135,
+          "enableKnowledgeAnswering": true
+        },
+        {
+          "instructions": [
+            {
+              "id": "ins-17664fd892",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "Hi! 👋 I’m AlphaNovo.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-04806ceba9"
+            },
+            {
+              "id": "ins-7504988973",
+              "type": "content",
+              "content": {
+                "type": "text",
+                "text": {
+                  "valueType": "dynamic",
+                  "dynamicValue": "I am here to assist you with our AI Chatbot & Product Development Solutions.",
+                  "staticValue": ""
+                },
+                "typing": {
+                  "valueType": "static",
+                  "staticValue": true
+                }
+              },
+              "nodeId": "nd-04806ceba9"
+            },
+            {
+              "id": "ins-ad5a4a69c8",
+              "type": "capture",
+              "entityId": "prompts://SingleChoice/v1",
+              "entityName": "Single Choice",
+              "nodeId": "nd-04806ceba9",
+              "variableId": "var-03e34832fa",
+              "question": {
+                "staticValue": "",
+                "dynamicValue": "How can I help you?",
+                "valueType": "dynamic"
+              },
+              "validation": {
+                "validators": []
+              },
+              "choice": {
+                "options": {
+                  "valueType": "static",
+                  "staticValue": [
+                    {
+                      "label": "What is AlphaNovo?",
+                      "value": "What is AlphaNovo?",
+                      "enabled": true
+                    },
+                    {
+                      "label": "I have a question.",
+                      "value": "I have a question.",
+                      "enabled": true
+                    },
+                    {
+                      "label": "I want to request a demo.",
+                      "value": "I want to request a demo.",
+                      "enabled": true
+                    }
+                  ],
+                  "dynamicValue": ""
+                }
+              },
+              "retry": {
+                "maxRetries": 2,
+                "retryMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "cancellation": {
+                "cancellable": true,
+                "confirmCancel": true,
+                "confirmCancelMessage": {
+                  "staticValue": "",
+                  "dynamicValue": "",
+                  "valueType": "static"
+                }
+              },
+              "handleFailure": false,
+              "historyLookback": 0,
+              "skipIfAlreadyFilled": false,
+              "transitions": [
+                {
+                  "id": "trs-6d32058087",
+                  "type": "transition",
+                  "label": "What is AlphaNovo?",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=What is AlphaNovo?"
+                  },
+                  "destination": {
+                    "node": "nd-9de724c619"
+                  }
+                },
+                {
+                  "id": "trs-06d37517ca",
+                  "type": "transition",
+                  "label": "I have a question.",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=I have a question."
+                  },
+                  "destination": {
+                    "node": "nd-ddbf65e26c"
+                  }
+                },
+                {
+                  "id": "trs-7dfb1d7ce0",
+                  "type": "transition",
+                  "label": "I want to request a demo.",
+                  "condition": {
+                    "type": "expression",
+                    "payload": "__CHOICE=I want to request a demo."
+                  },
+                  "destination": {
+                    "node": "nd-55a2bfe3ed"
+                  }
+                }
+              ],
+              "prompt": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are ExtractGPT and your only goal is to generate useful content in JSON format for developers to parse and use. You don't know any other language than JSON."
+                  },
+                  {
+                    "role": "user",
+                    "content": "```typescript\n/** The user answer to the question \"Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\nagent: Which one would you like? Choices: [ 1) Red Apple, 2) Yellow Apple, 3) Dark Banana ]\nuser: I will go with the second one please\n\"\"\""
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "{\"choice\":\"Yellow Apple\"}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "\nNow, forget about the previous transcripts. These were just examples, don't consider those as valid transcripts for this new task.\n\n###\n\nThe current Date is {{CURRENT_DATE_TIME}}.\n\nAt this point of the conversation, I need require the user to fill the output in following JSON output to complete the task.\nIf more than one property, try to extract each of them the best you can.\n\n```typescript\n/** The user answer to the question \"{{QUESTION}}\" */\ninterface Output = { choice: {{CHOICES_TYPINGS}} }\n```\n\nHere is a conversation between me and a user. Transcript:\n\"\"\"\n(...)\n{{TRANSCRIPT}}\n\"\"\"\n\nIn the last user message, here are the entities found:\n\"\"\"\nENTITIES_IDENTIFIED\n\"\"\"\n\nI need you to extract from the conversation transcript above the values the user has provided.\nIf the user has not provided the information I need, I need you to set the value of the missing answer properties to null.\nHave some tolerance to typos and variations in how the user selects from the possible values.\nNow, please reply to me with the above JSON output and nothing but JSON.\nYou should not explain your answer and should not talk back to me. Just JSON."
+                  }
+                ],
+                "model": "gpt-3.5-turbo",
+                "temperature": 0,
+                "signatureVersion": "Apr-2023",
+                "signature": "mtK2Lhb0B4CQ5dyrLhQTUVz92IwGSNQFkflVnVEWqN1DvH+02zPs3+OoQ2BUBCNocMeYC/5x/BPvmqVwqftVbZKSvVfFfJGMoAsSDPA5lxl8QDJD0vMOIO5bjuCTSvsoXdOZ8UCWU+trs50tPN+me5VjcLYGnQwWsVLUiqPyK4nJQYyymp9lqrZcedQ6wGoRs5r9ti1OcUy0msfw044O8RDtVo0dl52o6/zF4BAP40rDAwNsNIBSLnH6N1fXEE6Dy2Fe2cK7pKXvPS3ePDJYB2WyQC6M+Ps4Tl4yWN3wa8rVdf3w0bcrF1Wue5Xbyz4mxQ16fajq84xi2jeEKSpVCg=="
+              }
+            }
+          ],
+          "type": "standard",
+          "id": "nd-04806ceba9",
+          "name": "Hello",
+          "deletable": true,
+          "x": -60,
+          "y": 60,
+          "enableKnowledgeAnswering": false
+        },
+        {
+          "id": "nd-6815ca5136",
+          "name": "Start",
+          "type": "start",
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-b242207c4d",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "nd-04806ceba9"
+              }
+            }
+          ],
+          "x": -270,
+          "y": 15
+        },
+        {
+          "id": "nd-1c14e7a9d5",
+          "name": "End",
+          "type": "end",
+          "deletable": false,
+          "instructions": [
+            {
+              "id": "trs-5c1f53c076",
+              "type": "transition",
+              "condition": {
+                "type": "expression",
+                "payload": "true"
+              },
+              "destination": {
+                "node": "END"
+              }
+            }
+          ],
+          "x": 2145,
+          "y": 855
+        }
+      ],
+      "parentFolder": "root"
+    }
+  ],
+  "intents": [
+    {
+      "id": "int-yes",
+      "name": "yes",
+      "utterances_with_slots": [
+        "yes",
+        "yeah",
+        "absolutely",
+        "i'd like to",
+        "sure ",
+        "hmm probably",
+        "yup",
+        "ok"
+      ]
+    },
+    {
+      "id": "int-no",
+      "name": "no",
+      "utterances_with_slots": [
+        "no",
+        "i don't want to",
+        "absolutely not",
+        "nah",
+        "nope",
+        "not really",
+        "not sure",
+        "no thanks"
+      ]
+    },
+    {
+      "id": "int-cancel",
+      "name": "cancel",
+      "utterances_with_slots": [
+        "cancel",
+        "abort",
+        "abandon",
+        "i want to cancel",
+        "forget about this",
+        "leave",
+        "stop",
+        "quit",
+        "you know what, nevermind",
+        "forget it"
+      ]
+    }
+  ],
+  "list_entities": [],
+  "pattern_entities": [],
+  "actions": [],
+  "hooks": [],
+  "qnas": [],
+  "knowledge_base": [
+    {
+      "dataSources": [
+        {
+          "created_on": 1687994269875,
+          "data": {
+            "freshness": "Any",
+            "websiteFilter": "include",
+            "websites": [
+              "https://alphanovo-com.webflow.io/"
+            ]
+          },
+          "disabled": false,
+          "id": "ds-72b055d82d",
+          "type": "web-search"
+        }
+      ],
+      "description": "You are an intelligent assistant of AlphaNovo, an AI Chatbot and Product Development Agency. As part of our friendly and professional team, your main job is to help our users by answering their questions in a truthful and accurate manner. It's important to remember that you're not just a machine - you're an integral part of our team! So, please feel free to use the same language as our users when you respond to their questions. If the context allows it, you can answer their queries. Always maintain a helpful, professional, and friendly tone. Only answer to the questions related with our company and AI & ML. Always ask follow up questions!",
+      "id": "kb-76d9dc58a9",
+      "name": "Quickstart Knowledge",
+      "parentFolder": "root"
+    }
+  ],
+  "folders": [],
+  "agents": {
+    "SummaryAgent": {
+      "enabled": true,
+      "config": {
+        "summaryMaxTokens": 200,
+        "transcriptMaxLines": 20
+      }
+    },
+    "TranslatorAgent": {
+      "config": {
+        "detectLanguage": true
+      }
+    },
+    "KnowledgeAgent": {
+      "enabled": true,
+      "config": {
+        "answerOnStart": true
+      }
+    },
+    "PersonalityAgent": {
+      "config": {
+        "personality": ""
+      }
+    }
+  },
+  "cloudBot": {
+    "id": "e0a6ce23-4108-406a-b620-5b8141bad39d",
+    "name": "magnificent-otter",
+    "createdAt": "2023-07-01T20:59:59.569Z",
+    "updatedAt": "2023-07-02T03:13:02.540Z",
+    "configuration": {
+      "data": {},
+      "schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    "integrations": {
+      "139a7b61-6417-4dbd-8ca5-57deffbd4c6e": {
+        "enabled": true,
+        "name": "zapier",
+        "version": "0.2.0",
+        "webhookUrl": "https://webhook.botpress.cloud/e39b9f6c-bf4e-4299-af55-f3870f2dfe34",
+        "configuration": {},
+        "status": "registered",
+        "statusReason": null
+      },
+      "87b01760-ede8-49d5-afc6-6afc0d0d1bdb": {
+        "enabled": true,
+        "name": "webchat",
+        "version": "0.2.0",
+        "webhookUrl": "https://webhook.botpress.cloud/ab169a63-b9f4-4ba9-9bfd-e343ffc50f95",
+        "configuration": {
+          "messagingUrl": "https://messaging.botpress.cloud",
+          "adminKey": "u5ecGAmIHKir6dOSzjEByxWLM733Uy6OL6OVyK1PJzS86dv8ik0KpkFWwf4cAtXicJv98Kox4ZvuS6EBGETe6qBhiQRHXsxS2cZ1k9DHQkwPPpGlFgHVVtLnNKz2aUmP",
+          "clientId": "e0a6ce23-4108-406a-b620-5b8141bad39d",
+          "clientToken": "80204bf2-893e-48e9-b7a9-879b2b72e633.s8CCsIF8zrBpi8lyEAZp0ZlYXSFn6VxsLSERMSrRbJ3UhMIuigIdR6wCKpAUrVSbM48elv85pShrI+lzNDqJeQWe"
+        },
+        "status": "registered",
+        "statusReason": null
+      }
+    },
+    "signingSecret": "bss_LlCQey0YbTBYriJ5aIJDmkKjVkSTzyQcjZLt",
+    "states": {
+      "agentsBotVariables": {
+        "type": "bot",
+        "schema": {}
+      },
+      "agentsConversationVariables": {
+        "type": "conversation",
+        "schema": {}
+      },
+      "agentsUserVariables": {
+        "type": "user",
+        "schema": {}
+      },
+      "agentsWorkflowsVariables": {
+        "type": "conversation",
+        "schema": {}
+      },
+      "botVariables": {
+        "type": "bot",
+        "schema": {}
+      },
+      "context": {
+        "type": "conversation",
+        "schema": {}
+      },
+      "session": {
+        "type": "conversation",
+        "schema": {}
+      },
+      "userVariables": {
+        "type": "user",
+        "schema": {}
+      }
+    },
+    "message": {
+      "tags": {}
+    },
+    "user": {
+      "tags": {}
+    },
+    "conversation": {
+      "tags": {}
+    },
+    "events": {
+      "schedulev1": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "destination": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "destination"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "recurringEvents": {},
+    "deployedAt": "2023-07-02T03:13:02.539Z",
+    "medias": [],
+    "createdBy": "60a576fc-1024-4069-8d5d-6c5d65a60263",
+    "dev": false
+  },
+  "models": {
+    "intent_model": {
+      "type": "openbook_v1",
+      "model_hash": "z2fuim",
+      "model_langs": [
+        "en"
+      ],
+      "model_endpoint": "https://api.botpress.cloud/v1/cognitive/openbook",
+      "training_started_on": "2023-06-29T18:04:52.822Z",
+      "training_status": "done",
+      "model_id": "9310977b567b4d2a.d208c1c3dae45987",
+      "training_progress": 1,
+      "training_ended_on": "2023-06-29T18:04:53.143Z"
+    }
+  }
+}
